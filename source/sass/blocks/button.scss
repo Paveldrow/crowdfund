@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $white;
+  background-color: $button-background;
+  border-radius: 34px;
+
+  &:hover {
+    background-color: $button-background-hover;
+  }
+
+  &--back-project {
+    width: 214px;
+  }
+}
