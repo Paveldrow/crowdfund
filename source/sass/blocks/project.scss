@@ -1,0 +1,48 @@
+.project {
+  box-sizing: border-box;
+  margin-right: 24px;
+  margin-left: 24px;
+  margin-bottom: 76px;
+  padding-top: 32px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 40px;
+  background-color: $white;
+  border: 1px solid rgba($dark, 0.1);
+  border-radius: 8px;
+
+  @media (min-width: 830px) {
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+}
+
+.project__title {
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  @media (min-width: 600px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.project__description {
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  color: $light-text;
+
+  @media (min-width: 600px) {
+    width: auto;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}

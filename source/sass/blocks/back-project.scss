@@ -1,0 +1,167 @@
+.back-project {
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($black, 0.5);
+  z-index: 10;
+
+  &--opened {
+    display: block;
+  }
+}
+
+
+.back-project__container {
+  position: relative;
+  top: 121px;
+}
+
+.back-project__button-close {
+  position: absolute;
+  right: 24px;
+  top: 36px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 16px;
+  height: 15px;
+  border: none;
+  background-color: transparent;
+  background-image: url('../../img/icon-back-project-button-close.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.back-project__card {
+  padding-left: 0;
+  padding-right: 0;
+  cursor: pointer;
+
+  &:hover:not(.donate-card--disabled) .back-project__title,
+  &:focus:not(.donate-card--disabled) .back-project__title {
+    color: $button-background;
+  }
+}
+
+.back-project__card--current {
+  box-sizing: border-box;
+  border: 2px solid $button-background;
+}
+
+.back-project__card-header {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.back-project__card .back-project__title {
+  position: relative;
+  padding-left: 52px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba($black, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.back-project__card--current .back-project__title {
+  &::after {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: $button-background;
+    border-radius: 50%;
+  }
+}
+
+.back-project__reward-wrapper {
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-top: 1px solid rgba($dark, 0.1);
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.back-project__card--current .back-project__reward-wrapper {
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+  }
+}
+
+.back-project__pledge {
+  width: 100%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 14px;
+  color: $light-text;
+
+  @media (min-width: 600px) {
+    width: 120px;
+    margin-right: auto;
+    margin-left: 0;
+    font-size: 15px;
+  }
+}
+
+.back-project__input {
+  box-sizing: border-box;
+  text-align: center;
+  width: 100px;
+  height: 48px;
+  margin-right: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: $black;
+  border-radius: 34px;
+  border: 1px solid rgba($black, 0.15);
+  caret-color: $button-background;
+  cursor: pointer;
+  background-image: url(../../img/icon-input.svg);
+  background-repeat: no-repeat;
+  background-position: 24px center;
+
+  &:active,
+  &:hover,
+  &:focus {
+    border-color: $button-background;
+    outline: none;
+  }
+
+  &[type='number']::-webkit-outer-spin-button,
+  &[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

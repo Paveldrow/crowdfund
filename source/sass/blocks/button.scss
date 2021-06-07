@@ -9,6 +9,9 @@
   color: $white;
   background-color: $button-background;
   border-radius: 34px;
+  border: none;
+  cursor: pointer;
+  outline: none;
 
   &:hover {
     background-color: $button-background-hover;
