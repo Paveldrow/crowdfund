@@ -2,24 +2,24 @@
   box-sizing: border-box;
   min-height: 300px;
   padding-top: 32px;
-  background-image: url('../../img/background-header-mobile.jpg');
+  background-image: url('../img/background-header-mobile.jpg');
   background-repeat: no-repeat;
   background-size: 600px 400px;
 
   background-position: center;
 
   @media (min-resolution: 2dppx) {
-    background-image: url('../../img/background-header-mobile@2x.jpg');
+    background-image: url('../img/background-header-mobile@2x.jpg');
   }
 
   @media (min-width: 600px) {
     min-height: 400px;
-    background-image: url('../../img/background-header-desktop.jpg');
+    background-image: url('../img/background-header-desktop.jpg');
     background-size: cover;
     background-position: center;
 
   @media (min-resolution: 2dppx) {
-    background-image: url('../../img/background-header-desktop@2x.jpg');
+    background-image: url('../img/background-header-desktop@2x.jpg');
   }
 }
 }
@@ -51,13 +51,13 @@
   height: 15px;
   border: none;
   background-color: transparent;
-  background-image: url('../../img/icon-menu-button-open.svg');
+  background-image: url('../img/icon-menu-button-open.svg');
   background-repeat: no-repeat;
   background-size: contain;
   outline: none;
 
   &--opened {
-    background-image: url('../../img/icon-menu-button-close.svg');
+    background-image: url('../img/icon-menu-button-close.svg');
   }
 
   &:hover {

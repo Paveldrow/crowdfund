@@ -6,7 +6,7 @@ const openMenu = function () {
     menu.classList.toggle('page-header__main-nav--opened');
     buttonMenu.classList.toggle('page-header__button-menu--opened');
   });
-}
+};
 
 
-export {openMenu};
+export { openMenu };

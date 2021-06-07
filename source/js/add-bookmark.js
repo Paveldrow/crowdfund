@@ -5,6 +5,6 @@ const addBookmark = function () {
     evt.preventDefault();
     buttonBookmark.classList.toggle('bookmark--current');
   });
-}
+};
 
-export {addBookmark};
+export { addBookmark };

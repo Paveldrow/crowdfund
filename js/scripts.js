@@ -1,4 +1,58 @@
-import { addedPay } from './added-payment.js';
+// Menu opening module
+
+const buttonMenu = document.querySelector('.page-header__button-menu');
+const menu = document.querySelector('.page-header__main-nav');
+
+const openMenu = function () {
+  buttonMenu.addEventListener('click', () => {
+    menu.classList.toggle('page-header__main-nav--opened');
+    buttonMenu.classList.toggle('page-header__button-menu--opened');
+  });
+};
+
+// Bookmark module
+
+const buttonBookmark = document.querySelector('.bookmark');
+
+const addBookmark = function () {
+  buttonBookmark.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    buttonBookmark.classList.toggle('bookmark--current');
+  });
+};
+
+// Payment module
+
+const totalSum = document.querySelector('.information__total');
+const targetBar = document.querySelector('.information__bar');
+const targetSum = document.querySelector('.information__target');
+
+function setStatusBar() {
+  const totalTarget = targetSum.textContent.replace(",", '');
+  const total = totalSum.textContent.replace(",", '');
+  targetBar.style.width = ((total / totalTarget) * 100) + '%';
+};
+
+const sendPay = function () {
+  const currentTarif = document.querySelector('.back-project__card--current');
+  const inputPay = currentTarif.querySelector('.back-project__input');
+  if (inputPay.value !== undefined) {
+    totalSum.textContent = (Number(totalSum.textContent.replace(',', '')) + Number(inputPay.value)).toLocaleString('ja-JP');
+  };
+  return totalSum.textContent;
+};
+
+const addSponsorItem = function () {
+  const sponsorTotal = document.querySelector('.information__sponsors');
+  const sponsorConcat = Number(sponsorTotal.textContent.replace(',', '')) + 1
+  sponsorTotal.textContent = sponsorConcat.toLocaleString('ja-JP');
+}
+
+const addedPay = function () {
+  sendPay();
+  setStatusBar();
+  addSponsorItem()
+};
 
 const buttonsBackProjectReward = document.querySelectorAll('.donate-card__button');
 const donateButtonClose = document.querySelector('.back-project__button-close');
@@ -54,6 +108,7 @@ const selectPayment = function () {
 const sendPaymentHandler = function () {
   donateBlock.classList.remove('back-project--opened');
   addedPay();
+
   showPaymentComplited();
   closePaymentComplited();
 };
@@ -82,4 +137,6 @@ const backProjectMenu = function () {
   closeBackProject();
 };
 
-export { backProjectMenu };
+openMenu();
+addBookmark();
+backProjectMenu();
